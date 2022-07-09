@@ -1,19 +1,8 @@
 ---
 title: Linux Installation
-menu: Linux
+menu: Linux (remake)
 weight: 20
 ---
-
-## Install Fluvio CLI
-
-The Fluvio CLI (_command-line interface_) is an all-in-one tool for setting up, interacting, and managing with Fluvio clusters.
-
-Install the Fluvio CLI by running the following command:
-
-%copy first-line%
-```bash
-curl -fsS https://packages.fluvio.io/v1/install.sh | bash
-```
 
 ## Setting up a Fluvio cluster on Kubernetes
 
@@ -45,6 +34,8 @@ $ kubectl version
 Client Version: version.Info{Major:"1", Minor:"21", GitVersion:"v1.21.3", GitCommit:"ca643a4d1f7bfe34773c74f79527be4afd95bf39", GitTreeState:"clean", BuildDate:"2021-07-15T21:04:39Z", GoVersion:"go1.16.6", Compiler:"gc", Platform:"linux/amd64"}
 Server Version: version.Info{Major:"1", Minor:"21", GitVersion:"v1.21.2", GitCommit:"092fbfbf53427de67cac1e9fa54aaa09a28371d7", GitTreeState:"clean", BuildDate:"2021-06-16T12:53:14Z", GoVersion:"go1.16.5", Compiler:"gc", Platform:"linux/amd64"}
 ```
+
+_[Will this need changing when `kubectl version`'s output is fully replaced?]_
 
 %copy first-line%
 ```bash

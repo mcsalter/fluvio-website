@@ -17,6 +17,8 @@ to stream data we'll need to connect to an existing cluster. The best way
 to do this is by setting up an InfinyOn Cloud account, where you can
 create a free Fluvio cluster to quickly start streaming data.
 
+_[Do we need this file? Would it would make more sense to have either a note in [linux](../linux), or a redirect to cloud?]_
+
 ## Creating an InfinyOn Cloud account
 
 Head on over to the <a href="https://infinyon.cloud" target="_blank">InfinyOn Cloud signup page</a> to create an account.
