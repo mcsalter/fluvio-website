@@ -4,17 +4,6 @@ menu: MacOS (Intel)
 weight: 10
 ---
 
-## Install Fluvio CLI
-
-The Fluvio CLI (_command-line interface_) is an all-in-one tool for setting up, interacting, and managing with Fluvio clusters.
-
-Install the Fluvio CLI by running the following command:
-
-%copy first-line%
-```bash
-curl -fsS https://packages.fluvio.io/v1/install.sh | bash
-```
-
 ## Required Packages for Local Fluvio cluster
 
 1) [Minikube]({{< ref "#install-minikube" >}})

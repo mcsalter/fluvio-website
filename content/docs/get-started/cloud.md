@@ -8,17 +8,6 @@ InfinyOn Cloud is the fastest and easiest way to get started with Fluvio. We'll 
 
 You can reach us on <a href="https://discordapp.com/invite/bBG2dTz" target="_blank">Discord</a> or in <a href="https://github.com/infinyon/fluvio/issues" target="_blank">Github</a>.
 
-## Install Fluvio CLI
-
-The Fluvio CLI (_command-line interface_) is an all-in-one tool for setting up, managing, and interacting with Fluvio clusters.
-
-Install the Fluvio CLI by running the following command:
-
-%copy first-line%
-```bash
-curl -fsS https://packages.fluvio.io/v1/install.sh | bash
-```
-
 ## Creating an InfinyOn Cloud account
 
 Head on over to the <a href="https://infinyon.cloud" target="_blank">InfinyOn Cloud signup page</a> to create an account.

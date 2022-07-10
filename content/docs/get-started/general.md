@@ -4,7 +4,7 @@ menu: General Getting Started
 weight: 1
 ---
 
-There are two things needed for using Fluvio. The first is the Fluvio CLI, . 
+There are two things needed for using Fluvio. The first is the Fluvio CLI.
 Second is the database on which Fluvio stores it's cluster.
 
 Currently there are two options for managing it:
@@ -13,7 +13,7 @@ Currently there are two options for managing it:
 
 ## Getting help
 
-If you need help, you can reach us on [Discord](https://discordapp.com/invite/bBG2dTz) 
+If you need help, you can reach us on [Discord](https://discordapp.com/invite/bBG2dTz).
 or in [Github](https://github.com/infinyon/fluvio/issues).
 
 ## Install Fluvio CLI
@@ -29,7 +29,7 @@ curl -fsS https://packages.fluvio.io/v1/install.sh | bash
 	
 ## Connect to InfinyOn Cloud
 
-This is the easiest way of getting started with Fluvio. 
+This is the easiest way of getting started with Fluvio.
 For the small price of creating an account, you too can avoid setting up a Kubernetes cluster!
 
 Follow the instructions below to be on your way.
@@ -38,7 +38,7 @@ Follow the instructions below to be on your way.
 
 ## Install Dependencies Locally
 
-If you decide to run a Fluvio cluster locally, you must set up a Kubernetes cluster. 
+If you decide to run a Fluvio cluster locally, you must set up a Kubernetes cluster.
 Please follow these guides for setting it up on your os of choice:
 
 ### Linux
@@ -55,9 +55,9 @@ Please follow these guides for setting it up on your os of choice:
 
 ### Windows
 
-~> At the current moment Windows is not supported
+~> At the current moment Windows is not supported.
 
-_[Should we test out running k8s and fluvio in wsl? 
+_[Should we test out running k8s and fluvio in wsl?
 I guess best suggestion would be to install fluvio CLI and use the cloud]_
 
 [Cloud with InfiniOn]: {{< ref "/docs/get-started/cloud.md" >}}
