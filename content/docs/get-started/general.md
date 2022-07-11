@@ -29,24 +29,66 @@ curl -fsS https://packages.fluvio.io/v1/install.sh | bash
 
 At this point, there are multiple ways to install
 
-{{< h-list tabTotal="5" tabID="2" tabName1="Cloud / Raspberry Pi" tabName2="Linux" tabName3="MacOS" tabName4="⚠ Windows ⚠">}}
+{{< h-list tabTotal="5" tabID="2" tabName1="Cloud / Raspberry Pi" tabName2="Linux" tabName3="MacOS (Intel)" tabName4="MacOS (M1)" tabName5="⚠ Windows ⚠">}}
 
 {{<h-item tabNum="1">}}
-{{<download-card>}}
 
 ### Cloud and Raspberry Pi:
 
-This is the easiest way of getting started with Fluvio.
+Using the InfinyOn Cloud is the easiest way to use Fluvio.
 
-_[Will mostly be a repeat of cloud.]_
+Head on over to the [InfinyOn Cloud signup page](https://infinyon.cloud) to create an account.
+
+<img src="../images/cloud-signup.jpg"
+     alt="A screenshot of the InfinyOn new account form, with Name, Organization, Email, and Password fields"
+     style="justify: center; max-width: 300px" />
+
+After filling out the form, you'll be greeted with a success message telling you to verify your email. You'll need to complete this step in order to continue.
+
+<img src="../images/cloud-verification.jpg"
+     alt="A screenshot of the verification email received after completing the signup form, including a verification link"
+     style="justify: center; max-width: 500px" />
+
+You should get a confirmation that your account is ready to use
+
+<img src="../images/cloud-confirmation.jpg"
+     alt="A screenshot of the prompt received after clicking the verification link, saying the account is ready to use"
+     style="justify: center; max-width: 300px" />
 
 
+At this point, we can log in via the Fluvio CLI and start sending and receiving messages to your Fluvio cluster. To log in with the CLI, you'll need to run the `fluvio cloud login` command, then type in your email and password when prompted.
 
-{{</download-card>}}
+%copy first-line%
+```bash
+$ fluvio cloud login
+InfinyOn Cloud email: batman@justiceleague.com
+Password:
+```
+
+You'll be able to tell that everything worked if your current profile is set to `cloud`. You can check with this command:
+
+%copy first-line%
+```bash
+$ fluvio profile current
+cloud
+```
+
+If you installed fluvio locally it will be listed alongside `cloud`:
+
+%copy first-line%
+```bash
+$ fluvio profile list
+    PROFILE       CLUSTER       ADDRESS                          TLS 
+    local         local         localhost:9003                   Disabled 
+ *  cloud         cloud         router.infinyon.cloud:9003       Verified
+```
+
+-> Use `fluvio profile switch` command to switch between clusters.
+
+
 {{</h-item>}}
 
 {{<h-item tabNum="2">}}
-{{<download-card>}}
 
 ### Linux
 
@@ -57,24 +99,44 @@ For installing the cluster on your local machine, here are some suggested Kubern
   * [Kind](https://kind.sigs.k8s.io)
   * [Minikube](https://minikube.sigs.k8s.io/docs/start/)
 
-
-{{</download-card>}}
+Most of these should be available in your package manager. If it turns out they are not, it is a simple download! 
+Not quite as simple as using the cloud, though.
 {{</h-item>}}
 
 
 {{<h-item tabNum="3">}}
 {{<download-card>}}
 
-### Mac OS
+### Mac OS Intel
 
-_[]_
+_[This is rather sparse for information,]_
 
+#### Installing a Kubenetes Cluster
 
+We recommend [Minikube](https://minikube.sigs.k8s.io/docs/start/) as the Kubernetes cluster of choice. 
+Please follow the instructions in the link for Mac OS.
+
+-> Thanks to homebrew on MacOS, you can avoid downloading random files off of websites, and can instead download random files in your command line!
 
 {{</download-card>}}
 {{</h-item>}}
 
 {{<h-item tabNum="4">}}
+{{<download-card>}}
+
+### Mac OS M1
+
+_[A bit less sparse compared to Intel]_
+
+#### Installing a Kubenetes Cluster
+
+We recommend using [Kind](https://kind.sigs.k8s.io) as the Kubernetes cluster for the M1 Macs. 
+Please follow the instructions for installing.
+
+{{</download-card>}}
+{{</h-item>}}
+
+{{<h-item tabNum="5">}}
 {{<download-card>}}
 
 ### Windows
@@ -90,7 +152,7 @@ I guess best suggestion would be to install fluvio CLI and use the cloud]_
 
 ## Checking Installs
 
-Some of Kubernetes installation will install `kubectl` and `helm`.  You can check their install status by:
+Some of Kubernetes installation will install `kubectl` and `helm`, and `Docker` is a requirement for several Kubernetes systems.  You can check their install status by:
 
 %copy first-line%
 ```bash
@@ -111,24 +173,38 @@ GitTreeState:"clean",
 GoVersion:"go1.17.11"}
 ```
 
-If `kubectl` or `helm` were not installed, you can installed them the following way:
+%copy first-line%
+```bash
+$ docker --version
+Docker version 20.10.17-ce, build a89b84221c85
+```
+
+If any of these were not installed, you can installed them the following way:
 
 
 ### Install Kubectl
 
 `kubectl` is the Kubernetes command-line tool. It is used to run commands against Kubernetes clusters.
 
-Follow the instructions at the [kubectl installation page] and follow the instructions to download and install `kubectl` on Linux.
+Follow the instructions at the [kubectl installation page] and you will soon have `kubectl` installed.
 
-[kubectl installation page]: https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/ 
+[kubectl installation page]: https://kubernetes.io/docs/tasks/tools/#kubectl
 
 ### Install Helm
 
 `helm` is the package manager for Kubernetes. 
 
-Follow the instructions at the [helm installation page] and follow the instructions to download and install `helm` on Linux.
+Follow the instructions at the [helm installation page] and you will soon have `helm` installed.
 
 [helm installation page]: https://v3.helm.sh/docs/intro/install/ 
+
+### Install Docker
+
+`Docker` is container system used by several kubernetes systems. It helps ensure that everything is in its own little package and not talking to eachother.
+
+Follow the instructions at the [Docker installation guide], it should tell you how to download and install `Docker` for your chosen OS.
+
+[Docker installation guide]: (https://docs.docker.com/engine/install/)
 
 ## start Fluvio cluster
 
