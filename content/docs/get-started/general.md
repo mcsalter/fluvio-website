@@ -26,7 +26,26 @@ Install the Fluvio CLI by running the following command:
 ```bash
 curl -fsS https://packages.fluvio.io/v1/install.sh | bash
 ```
-	
+
+### Environment Variables and Fluvio
+
+Fluvio installs to `~/.fluvio/bin/`. This is not in the PATH [environment variable](https://www.ibm.com/docs/en/aix/7.2?topic=accounts-path-environment-variable), and as such will not be found as a program to execute by default. Please add it with one of these three commands.
+
+%copy first-line%
+```bash
+$ export PATH=${HOME}/.fluvio/bin:${PATH} >> ~/.bashrc
+```
+
+%copy first-line%
+```zsh
+$ export PATH=${HOME}/.fluvio/bin:${PATH} >> ~/.zshrc
+```
+
+%copy first-line%
+```fish
+$ fish_add_path $HOME/.fluvio/bin
+```
+
 ## Connect to InfinyOn Cloud
 
 This is the easiest way of getting started with Fluvio.
