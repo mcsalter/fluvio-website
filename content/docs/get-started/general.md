@@ -25,11 +25,33 @@ Install the Fluvio CLI by running the following command:
 curl -fsS https://packages.fluvio.io/v1/install.sh | bash
 ```
 
+### Environment Variables and Fluvio
+
+Fluvio installs to `~/.fluvio/bin/`. This is **not** in the PATH [environment variable], and as such will not be found as a program to execute by default.
+Please add it with one of these three commands.
+
+%copy first-line%
+```bash
+$ export PATH=${HOME}/.fluvio/bin:${PATH} >> ~/.bashrc
+```
+
+%copy first-line%
+```zsh
+$ export PATH=${HOME}/.fluvio/bin:${PATH} >> ~/.zshrc
+```
+
+%copy first-line%
+```fish
+$ fish_add_path $HOME/.fluvio/bin
+```
+
+[environment variable]:(https://www.ibm.com/docs/en/aix/7.2?topic=accounts-path-environment-variable) 
+
 ## Setting up Fluvio:
 
-At this point, there are multiple ways to install
+At this point, there are multiple ways to install:
 
-{{< h-list tabTotal="5" tabID="2" tabName1="Cloud / Raspberry Pi" tabName2="Linux" tabName3="MacOS (Intel)" tabName4="MacOS (M1)" tabName5="⚠ Windows ⚠">}}
+{{< h-list tabTotal="5" tabID="0" tabName1="Cloud / Raspberry Pi" tabName2="Linux" tabName3="MacOS (Intel)" tabName4="MacOS (M1)" tabName5="⚠ Windows ⚠">}}
 
 {{<h-item tabNum="1">}}
 
@@ -99,13 +121,14 @@ For installing the cluster on your local machine, here are some suggested Kubern
   * [Kind](https://kind.sigs.k8s.io)
   * [Minikube](https://minikube.sigs.k8s.io/docs/start/)
 
-Most of these should be available in your package manager. If it turns out they are not, it is a simple download! 
+Most of these should be available in your package manager. Either install there or use the links above, it is a simple download!
+
 Not quite as simple as using the cloud, though.
+
 {{</h-item>}}
 
 
 {{<h-item tabNum="3">}}
-{{<download-card>}}
 
 ### Mac OS Intel
 
@@ -114,15 +137,29 @@ _[This is rather sparse for information,]_
 #### Installing a Kubenetes Cluster
 
 We recommend [Minikube](https://minikube.sigs.k8s.io/docs/start/) as the Kubernetes cluster of choice. 
-Please follow the instructions in the link for Mac OS.
 
--> Thanks to homebrew on MacOS, you can avoid downloading random files off of websites, and can instead download random files in your command line!
+%copy first-line%
+```bash
+$ brew install minikube
+```
 
-{{</download-card>}}
+The minikube driver `hyperkit` is recommended, as other drivers have not been tested. Please install with:
+
+%copy first-line%
+```bash
+$ brew install hyperkit
+```
+
+When running `minikube`, please run with the `--driver=hyperkit` flag:
+
+%copy first-line%
+```bash
+$ minikube start --driver=hyperkit
+```
+
 {{</h-item>}}
 
 {{<h-item tabNum="4">}}
-{{<download-card>}}
 
 ### Mac OS M1
 
@@ -131,28 +168,71 @@ _[A bit less sparse compared to Intel]_
 #### Installing a Kubenetes Cluster
 
 We recommend using [Kind](https://kind.sigs.k8s.io) as the Kubernetes cluster for the M1 Macs. 
-Please follow the instructions for installing.
 
-{{</download-card>}}
+Please either follow the instructions in the link, or use Homebrew:
+
+%copy first-line%
+```bash
+$ brew install kind
+```
+
+#### Start a Kubernetes cluster
+
+To configure kind cluster creation, you will need to create a YAML config file. This file follows Kubernetes conventions for versioning etc.
+Create a file named: `config.yaml` in a directory `k8-util/cluster` with the following content:
+
+```yaml
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+  - role: control-plane
+    # port forward 80 on the host to 80 on this node
+    extraPortMappings:
+      - containerPort: 30003 #sc
+        hostPort: 30003
+        protocol: TCP
+      - containerPort: 30004 #spu 1
+        hostPort: 30004
+        protocol: TCP
+      - containerPort: 30005 #spu 2
+        hostPort: 30005
+        protocol: TCP
+      - containerPort: 30006 #spu 3
+        hostPort: 30006
+        protocol: TCP
+
+```
+Start a Kubernetes cluster locally with by running the following in a terminal window:
+
+%copy first-line%
+```bash
+$ kind create cluster --config k8-util/cluster/config.yaml 
+```
+
 {{</h-item>}}
 
 {{<h-item tabNum="5">}}
-{{<download-card>}}
 
 ### Windows
 
 ~> At the current moment Windows is not supported.
 
+IF you are determined to run this on windows, we would suggest installing the Fluvio CLI in [WSL](https://docs.microsoft.com/en-us/windows/wsl/install) 
+(as bash scripts will not run in windows) and use the InfinOn Cloud.
+
+
+
 _[Should we test out running k8s and fluvio in wsl?
 I guess best suggestion would be to install fluvio CLI and use the cloud]_
 
-{{</download-card>}}
 {{</h-item>}}
 {{</h-list>}}
 
 ## Checking Installs
 
-Some of Kubernetes installation will install `kubectl` and `helm`, and `Docker` is a requirement for several Kubernetes systems.  You can check their install status by:
+Some of Kubernetes installation will install `kubectl` and `helm`, these are important and useful for running Kubernetes. 
+`Docker` is a requirement for some Kubernetes systems, and may not be installed automatically.
+You can check if they are installed by running:
 
 %copy first-line%
 ```bash
