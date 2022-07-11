@@ -6,7 +6,7 @@ weight: 1
 
 
 There are two things needed for using Fluvio. The first is the Fluvio CLI.
-Second is the database on which Fluvio stores it's cluster.
+Second is the database on which Fluvio stores its cluster.
 
 Currently there are two options for managing it:
 - Using the InfinyOn Cloud
@@ -16,7 +16,7 @@ Currently there are two options for managing it:
 
 ## Install Fluvio CLI
 
-The Fluvio CLI (_command-line interface_) is an all-in-one tool for setting up, interacting, and managing with Fluvio clusters.
+The Fluvio CLI (_command-line interface_) is an all-in-one tool for setting up, interacting with, and managing Fluvio clusters.
 
 Install the Fluvio CLI by running the following command:
 
@@ -71,14 +71,14 @@ After filling out the form, you'll be greeted with a success message telling you
      alt="A screenshot of the verification email received after completing the signup form, including a verification link"
      style="justify: center; max-width: 500px" />
 
-You should get a confirmation that your account is ready to use
+You should get a confirmation that your account is ready to use.
 
 <img src="../images/cloud-confirmation.jpg"
      alt="A screenshot of the prompt received after clicking the verification link, saying the account is ready to use"
      style="justify: center; max-width: 300px" />
 
 
-At this point, we can log in via the Fluvio CLI and start sending and receiving messages to your Fluvio cluster. To log in with the CLI, you'll need to run the `fluvio cloud login` command, then type in your email and password when prompted.
+At this point, you can log in via the Fluvio CLI and start sending and receiving messages to your Fluvio cluster. To log in with the CLI, you'll need to run the `fluvio cloud login` command, then type in your email and password when prompted.
 
 %copy first-line%
 ```bash
@@ -132,7 +132,7 @@ Not quite as simple as using the cloud, though.
 
 ### Mac OS Intel
 
-_[This is rather sparse for information,]_
+_[This is rather sparse for information]_
 
 #### Installing a Kubenetes Cluster
 
@@ -178,7 +178,7 @@ $ brew install kind
 
 #### Start a Kubernetes cluster
 
-To configure kind cluster creation, you will need to create a YAML config file. This file follows Kubernetes conventions for versioning etc.
+To configure kind cluster creation, you will need to create a YAML config file. This file follows Kubernetes conventions for versioning, etc.
 Create a file named: `config.yaml` in a directory `k8-util/cluster` with the following content:
 
 ```yaml
@@ -217,8 +217,8 @@ $ kind create cluster --config k8-util/cluster/config.yaml
 
 ~> At the current moment Windows is not supported.
 
-IF you are determined to run this on windows, we would suggest installing the Fluvio CLI in [WSL](https://docs.microsoft.com/en-us/windows/wsl/install) 
-(as bash scripts will not run in windows) and use the InfinOn Cloud.
+IF you are determined to run this on Windows, we would suggest installing the Fluvio CLI in [WSL](https://docs.microsoft.com/en-us/windows/wsl/install) 
+(as bash scripts will not run in Windows) and use the InfinOn Cloud.
 
 
 
@@ -242,7 +242,7 @@ Kustomize Version: v4.5.4
 Server Version: version.Info{Major:"1", Minor:"24", GitVersion:"v1.24.1", GitCommit:"3ddd0f45aa91e2f30c70734b175631bec5b5825a", GitTreeState:"clean", BuildDate:"2022-05-24T12:18:48Z", GoVersion:"go1.18.2", Compiler:"gc", Platform:"linux/amd64"}
 ```
 
--> Note, the output of this command is soon due to change, do not worry if there is a warning attached to it.
+-> Note, the output of this command is deprecated, and will be replaced by the output of `kubectl version --short` in the future. Don't worry if there is a warning attached to it.
 
 %copy first-line%
 ```bash
@@ -259,7 +259,7 @@ $ docker --version
 Docker version 20.10.17-ce, build a89b84221c85
 ```
 
-If any of these were not installed, you can installed them the following way:
+If any of these were not installed, you can install them the following way:
 
 
 ### Install Kubectl
@@ -274,21 +274,21 @@ Follow the instructions at the [kubectl installation page] and you will soon hav
 
 `helm` is the package manager for Kubernetes. 
 
-Follow the instructions at the [helm installation page] and you will soon have `helm` installed.
+Follow the instructions at the [helm installation page] and `helm` can easily be installed.
 
 [helm installation page]: https://v3.helm.sh/docs/intro/install/ 
 
 ### Install Docker
 
-`Docker` is container system used by several kubernetes systems. It helps ensure that everything is in its own little package and not talking to eachother.
+`Docker` is container system used by several Kubernetes systems. It helps ensure that everything is in its own little custom OS.
 
-Follow the instructions at the [Docker installation guide], it should tell you how to download and install `Docker` for your chosen OS.
+Follow the instructions at the [Docker installation guide] – they should tell you how to download and install `Docker` for your chosen OS.
 
 [Docker installation guide]: (https://docs.docker.com/engine/install/)
 
 ## start Fluvio cluster
 
-you can start a Fluvio cluster with the command `fluvio cluster start`.
+You can start a Fluvio cluster with the command `fluvio cluster start`.
 
 %copy first-line%
 ```bash
@@ -371,13 +371,13 @@ Next, check out our [Tutorials page] to see real-world examples of Fluvio in act
 
 ## Getting help
 
-If you need help, you can reach us on [Discord](https://discordapp.com/invite/bBG2dTz).
+If you need help, you can reach us on [Discord](https://discordapp.com/invite/bBG2dTz)
 or in [Github](https://github.com/infinyon/fluvio/issues).
 
 
 ### Related topics
 
-~> warning Link rot
+_[warning Link rot]_
 
 - ["Hello World" in Java](https://www.infinyon.com/tutorials/java/hello-world/)
 - ["Hello World" in Node.js](https://www.infinyon.com/tutorials/node/hello-world/)
