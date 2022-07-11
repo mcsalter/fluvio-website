@@ -25,13 +25,13 @@ After filling out the form, you'll be greeted with a success message telling you
 alt="A screenshot of the verification email received after completing the signup form, including a verification link"
 style="justify: center; max-width: 500px" />
 
-You should get a confirmation that your account is ready to use
+You should get a confirmation that your account is ready to use.
 
 <img src="../images/cloud-confirmation.jpg"
 alt="A screenshot of the prompt received after clicking the verification link, saying the account is ready to use"
 style="justify: center; max-width: 300px" />
 
-At this point, we can log in via the Fluvio CLI and start sending and receiving messages to your Fluvio cluster. To log in with the CLI, you'll need to run the `fluvio cloud login` command, then type in your email and password when prompted.
+At this point, you can log in via the Fluvio CLI and start sending and receiving messages to your Fluvio cluster. To log in with the CLI, you'll need to run the `fluvio cloud login` command, then type in your email and password when prompted.
 
 %copy first-line%
 ```bash

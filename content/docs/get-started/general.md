@@ -11,11 +11,6 @@ Currently there are two options for managing it:
 - Using the InfinyOn Cloud
 - Installing Kubernetes locally on your computer
 
-## Getting help
-
-If you need help, you can reach us on [Discord](https://discordapp.com/invite/bBG2dTz).
-or in [Github](https://github.com/infinyon/fluvio/issues).
-
 ## Install Fluvio CLI
 
 The Fluvio CLI (_command-line interface_) is an all-in-one tool for setting up, interacting, and managing with Fluvio clusters.
@@ -29,7 +24,7 @@ curl -fsS https://packages.fluvio.io/v1/install.sh | bash
 
 ### Environment Variables and Fluvio
 
-Fluvio installs to `~/.fluvio/bin/`. This is not in the PATH [environment variable](https://www.ibm.com/docs/en/aix/7.2?topic=accounts-path-environment-variable), and as such will not be found as a program to execute by default. Please add it with one of these three commands.
+Fluvio installs to `~/.fluvio/bin/`. This is not in the PATH [environment variable], and as such will not be found as a program to execute by default. Please add it with one of these three commands.
 
 %copy first-line%
 ```bash
@@ -45,7 +40,7 @@ $ export PATH=${HOME}/.fluvio/bin:${PATH} >> ~/.zshrc
 ```fish
 $ fish_add_path $HOME/.fluvio/bin
 ```
-
+[environment variable]:(https://www.ibm.com/docs/en/aix/7.2?topic=accounts-path-environment-variable) 
 ## Connect to InfinyOn Cloud
 
 This is the easiest way of getting started with Fluvio.
@@ -58,7 +53,7 @@ Follow the instructions below to be on your way.
 ## Install Dependencies Locally
 
 If you decide to run a Fluvio cluster locally, you must set up a Kubernetes cluster.
-Please follow these guides for setting it up on your os of choice:
+Please follow these guides for setting it up on your OS of choice:
 
 ### Linux
 
@@ -83,3 +78,9 @@ I guess best suggestion would be to install fluvio CLI and use the cloud]_
 [Kubernetes on Linux]: {{<ref "/docs/get-started/linux.md">}}
 [Kubernetes on MacOS (Intel)]: {{<ref "/docs/get-started/mac.md">}}
 [Kubernetes on MacOS (M1)]: {{<ref "/docs/get-started/mac_m1.md">}}
+
+
+## Getting help
+
+If you need help, you can reach us on [Discord](https://discordapp.com/invite/bBG2dTz),
+or in [Github](https://github.com/infinyon/fluvio/issues)
