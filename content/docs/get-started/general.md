@@ -4,15 +4,11 @@ menu: General Getting Started
 weight: 1
 ---
 
+All you need to get started with Fluvio is to install the Fluvio CLI, and link it to a database.
 
-There are two things needed for using Fluvio. The first is the Fluvio CLI.
-Second is the database on which Fluvio stores its cluster.
-
-Currently there are two options for managing it:
-- Using the InfinyOn Cloud
-- Installing Kubernetes locally on your computer
-
-
+Currently there are two options for the database:
+- Using the [InfinyOn Cloud](https://www.infinyon.com/cloud/), the easiest option.
+- Installing Kubernetes locally on your computer.
 
 ## Install Fluvio CLI
 
@@ -22,40 +18,43 @@ Install the Fluvio CLI by running the following command:
 
 %copy first-line%
 ```bash
-curl -fsS https://packages.fluvio.io/v1/install.sh | bash
+$ curl -fsS https://packages.fluvio.io/v1/install.sh | bash
 ```
 
 ### Environment Variables and Fluvio
 
-Fluvio installs to `~/.fluvio/bin/`. This is **not** in the PATH [environment variable], and as such will not be found as a program to execute by default.
+Fluvio installs to `~/.fluvio/bin/`. This is **not** in the [PATH environment variable](https://www.ibm.com/docs/en/aix/7.2?topic=accounts-path-environment-variable), and as such will not be found as a program to execute by default.
 Please add it with one of these three commands.
 
-%copy first-line%
-```bash
-$ export PATH=${HOME}/.fluvio/bin:${PATH} >> ~/.bashrc
-```
+**Zsh**
 
 %copy first-line%
 ```zsh
 $ export PATH=${HOME}/.fluvio/bin:${PATH} >> ~/.zshrc
 ```
+**Bash**
+
+%copy first-line%
+```bash
+$ export PATH=${HOME}/.fluvio/bin:${PATH} >> ~/.bashrc
+```
+**Fish**
 
 %copy first-line%
 ```fish
 $ fish_add_path $HOME/.fluvio/bin
 ```
 
-[environment variable]:(https://www.ibm.com/docs/en/aix/7.2?topic=accounts-path-environment-variable) 
+## Setting up Fluvio
 
-## Setting up Fluvio:
+<strong>
+{{< h-list tabTotal="5" tabID="1" tabName1="Cloud" tabName2="Linux" tabName3="MacOS (Intel)" tabName4="MacOS (M1)" tabName5="⚠ Windows ⚠">}}
+</strong>
+<hr>
 
-At this point, there are multiple ways to install:
+{{< h-item tabNum="1">}}
 
-{{< h-list tabTotal="5" tabID="0" tabName1="Cloud / Raspberry Pi" tabName2="Linux" tabName3="MacOS (Intel)" tabName4="MacOS (M1)" tabName5="⚠ Windows ⚠">}}
-
-{{<h-item tabNum="1">}}
-
-### Cloud and Raspberry Pi:
+### Cloud (and Raspberry Pi)
 
 Using the InfinyOn Cloud is the easiest way to use Fluvio.
 
@@ -108,9 +107,9 @@ $ fluvio profile list
 -> Use `fluvio profile switch` command to switch between clusters.
 
 
-{{</h-item>}}
+{{< /h-item>}}
 
-{{<h-item tabNum="2">}}
+{{< h-item tabNum="2">}}
 
 ### Linux
 
@@ -121,18 +120,15 @@ For installing the cluster on your local machine, here are some suggested Kubern
   * [Kind](https://kind.sigs.k8s.io)
   * [Minikube](https://minikube.sigs.k8s.io/docs/start/)
 
-Most of these should be available in your package manager. Either install there or use the links above, it is a simple download!
+Most of these should be available in your package manager. Either install there or use the links above – it is a simple download!
+(Not quite as simple as using the cloud, though.)
 
-Not quite as simple as using the cloud, though.
-
-{{</h-item>}}
+{{< /h-item>}}
 
 
-{{<h-item tabNum="3">}}
+{{< h-item tabNum="3">}}
 
 ### Mac OS Intel
-
-_[This is rather sparse for information]_
 
 #### Installing a Kubenetes Cluster
 
@@ -157,13 +153,11 @@ When running `minikube`, please run with the `--driver=hyperkit` flag:
 $ minikube start --driver=hyperkit
 ```
 
-{{</h-item>}}
+{{< /h-item>}}
 
-{{<h-item tabNum="4">}}
+{{< h-item tabNum="4">}}
 
 ### Mac OS M1
-
-_[A bit less sparse compared to Intel]_
 
 #### Installing a Kubenetes Cluster
 
@@ -210,28 +204,23 @@ Start a Kubernetes cluster locally with by running the following in a terminal w
 $ kind create cluster --config k8-util/cluster/config.yaml 
 ```
 
-{{</h-item>}}
+{{< /h-item>}}
 
-{{<h-item tabNum="5">}}
+{{< h-item tabNum="5">}}
 
 ### Windows
 
-~> At the current moment Windows is not supported.
+~> Windows is not currently supported.
 
 IF you are determined to run this on Windows, we would suggest installing the Fluvio CLI in [WSL](https://docs.microsoft.com/en-us/windows/wsl/install) 
 (as bash scripts will not run in Windows) and use the InfinOn Cloud.
 
-
-
-_[Should we test out running k8s and fluvio in wsl?
-I guess best suggestion would be to install fluvio CLI and use the cloud]_
-
-{{</h-item>}}
-{{</h-list>}}
+{{< /h-item>}}
+{{< /h-list>}}
 
 ## Checking Installs
 
-Some of Kubernetes installation will install `kubectl` and `helm`, these are important and useful for running Kubernetes. 
+Some Kubernetes installations will install `kubectl` and `helm`. These are important and useful for running Kubernetes. 
 `Docker` is a requirement for some Kubernetes systems, and may not be installed automatically.
 You can check if they are installed by running:
 
@@ -260,13 +249,13 @@ $ docker --version
 Docker version 20.10.17-ce, build a89b84221c85
 ```
 
-If any of these were not installed, you can install them following the links below:
+If any of these were not installed, you can install them using the links below:
 
 ### Install Kubectl
 
-`kubectl` is the Kubernetes command-line tool. It is used to run commands against Kubernetes clusters.
+`kubectl` is the Kubernetes command-line tool. It is used to run commands and manage Kubernetes clusters.
 
-Follow the instructions at the [kubectl installation page] and you will soon have `kubectl` installed.
+Follow the instructions at the [kubectl installation page] to install `kubectl`.
 
 [kubectl installation page]: https://kubernetes.io/docs/tasks/tools/#kubectl
 
@@ -274,17 +263,17 @@ Follow the instructions at the [kubectl installation page] and you will soon hav
 
 `helm` is the package manager for Kubernetes. 
 
-Follow the instructions at the [helm installation page] and `helm` can easily be installed.
+Follow the instructions at the [helm installation page] to install `helm`.
 
 [helm installation page]: https://v3.helm.sh/docs/intro/install/ 
 
 ### Install Docker
 
-`Docker` is container system used by several Kubernetes systems. It helps ensure that everything is in its own little custom OS.
+`Docker` is container system used by several Kubernetes systems. It helps ensure that everything runs in its own container.
 
-Follow the instructions at the [Docker installation guide] – they should tell you how to download and install `Docker` for your chosen OS.
+Follow the instructions at the [Docker installation guide] to download and install `Docker`.
 
-[Docker installation guide]: (https://docs.docker.com/engine/install/)
+[Docker installation guide]: https://docs.docker.com/engine/install/
 
 ## start Fluvio cluster
 
@@ -311,7 +300,7 @@ Current channel: stable
 
 ## Verify Fluvio is installed
 
-You can check the information of Fluvio by running:
+You can check the status and version information of Fluvio by running `fluvio version`.
 
 %copy first-line%
 ```bash
@@ -320,7 +309,7 @@ Release Channel      : stable
 Fluvio CLI           : 0.9.30
 Fluvio CLI SHA256    : b2c7ed79f8c252539f3e59218569f6b6b3c451ca0f3f66a25ae760f2635bee9a
 Fluvio channel frontend SHA256 : 6f71beb65c7ece8a13695e4fb438a5bf5603794ffc9fccfdef6406fe0e721322
-Fluvio Platform      : Not available (minikube)
+Fluvio Platform      : 0.9.30 (minikube)
 Git Commit           : 140f78317abaec4d83e01685c8ce522aeb8c0138
 OS Details           : openSUSE Tumbleweed 20220706 (kernel 5.18.9-1-default)
 === Plugin Versions ===
@@ -330,7 +319,7 @@ Fluvio Runner (fluvio-run)     : 0.0.0
 
 ## Hello, Fluvio!
 
-Congratulations, you've successfully installed Fluvio on your local machine! 
+Congratulations, you've successfully installed Fluvio! 
 
 Let's use the Fluvio CLI to play with some basic functionality.
 
@@ -372,12 +361,10 @@ Next, check out our [Tutorials page] to see real-world examples of Fluvio in act
 ## Getting help
 
 If you need help, you can reach us on [Discord](https://discordapp.com/invite/bBG2dTz),
-or in [Github](https://github.com/infinyon/fluvio/issues).
+or by posting an issue on [Github](https://github.com/infinyon/fluvio/issues).
 
 
 ### Related topics
-
-_[warning Link rot]_
 
 - ["Hello World" in Java](https://www.infinyon.com/tutorials/java/hello-world/)
 - ["Hello World" in Node.js](https://www.infinyon.com/tutorials/node/hello-world/)
