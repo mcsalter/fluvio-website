@@ -30,13 +30,13 @@ Please add it with one of these three commands.
 
 %copy first-line%
 ```zsh
-$ export PATH=${HOME}/.fluvio/bin:${PATH} >> ~/.zshrc
+$ export PATH="${HOME}/.fluvio/bin:${PATH}" >> ~/.zshrc
 ```
 **Bash**
 
 %copy first-line%
 ```bash
-$ export PATH=${HOME}/.fluvio/bin:${PATH} >> ~/.bashrc
+$ export PATH="${HOME}/.fluvio/bin:${PATH}" >> ~/.bashrc
 ```
 **Fish**
 
