@@ -179,6 +179,7 @@ $ brew install kind
 #### Start a Kubernetes cluster
 
 To configure kind cluster creation, you will need to create a YAML config file. This file follows Kubernetes conventions for versioning, etc.
+
 Create a file named: `config.yaml` in a directory `k8-util/cluster` with the following content:
 
 ```yaml
@@ -259,8 +260,7 @@ $ docker --version
 Docker version 20.10.17-ce, build a89b84221c85
 ```
 
-If any of these were not installed, you can install them the following way:
-
+If any of these were not installed, you can install them following the links below:
 
 ### Install Kubectl
 
@@ -371,7 +371,7 @@ Next, check out our [Tutorials page] to see real-world examples of Fluvio in act
 
 ## Getting help
 
-If you need help, you can reach us on [Discord](https://discordapp.com/invite/bBG2dTz)
+If you need help, you can reach us on [Discord](https://discordapp.com/invite/bBG2dTz),
 or in [Github](https://github.com/infinyon/fluvio/issues).
 
 
