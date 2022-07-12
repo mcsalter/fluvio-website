@@ -5,15 +5,15 @@ weight: 1
 ---
 
 There are two things needed for using Fluvio. The first is the Fluvio CLI.
-Second is the database on which Fluvio stores it's cluster.
+Second is the database on which Fluvio stores its cluster.
 
-Currently there are two options for managing it:
+Currently there are two options for managing the database:
 - Using the InfinyOn Cloud
 - Installing Kubernetes locally on your computer
 
 ## Install Fluvio CLI
 
-The Fluvio CLI (_command-line interface_) is an all-in-one tool for setting up, interacting, and managing with Fluvio clusters.
+The Fluvio CLI (_command-line interface_) is an all-in-one tool for setting up, interacting with, and managing Fluvio clusters.
 
 Install the Fluvio CLI by running the following command:
 
@@ -46,7 +46,7 @@ $ fish_add_path $HOME/.fluvio/bin
 This is the easiest way of getting started with Fluvio.
 For the small price of creating an account, you too can avoid setting up a Kubernetes cluster!
 
-Follow the instructions below to be on your way.
+Follow the instructions found below to be on your way.
 
 [Cloud with InfiniOn]
 
@@ -54,6 +54,16 @@ Follow the instructions below to be on your way.
 
 If you decide to run a Fluvio cluster locally, you must set up a Kubernetes cluster.
 Please follow these guides for setting it up on your OS of choice:
+
+### docker
+Docker can be a quiet dependency of several Kubernetes systems, you can test if it is installed with:
+
+%copy first-line%
+```bash
+$ docker --version
+Docker version 20.10.17-ce, build a89b84221c85
+```
+If you need to install docker, follow the instructions found on the [docker install guide](https://docs.docker.com/engine/install/).
 
 ### Linux
 
