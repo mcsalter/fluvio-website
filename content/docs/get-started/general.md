@@ -12,7 +12,7 @@ Currently there are two options for the database:
 
 ## Install Fluvio CLI
 
-The Fluvio CLI (_command-line interface_) is an all-in-one tool for setting up, interacting with, and managing Fluvio clusters.
+The Fluvio <abbr title="command-line interface">CLI</abbr> is an all-in-one tool for setting up, interacting with, and managing Fluvio clusters.
 
 Install the Fluvio CLI by running the following command:
 
@@ -30,13 +30,13 @@ Please add it with one of these three commands.
 
 %copy first-line%
 ```zsh
-$ export PATH="${HOME}/.fluvio/bin:${PATH}" >> ~/.zshrc
+$ export PATH="$HOME/.fluvio/bin:${PATH}" >> ~/.zshrc
 ```
 **Bash**
 
 %copy first-line%
 ```bash
-$ export PATH="${HOME}/.fluvio/bin:${PATH}" >> ~/.bashrc
+$ export PATH="$HOME/.fluvio/bin:${PATH}" >> ~/.bashrc
 ```
 **Fish**
 
