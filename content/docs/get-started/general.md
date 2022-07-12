@@ -4,14 +4,13 @@ menu: General Getting Started
 weight: 1
 ---
 
-There are two things needed for using Fluvio. The first is the Fluvio CLI.
-Second is the database on which Fluvio stores its cluster.
+All you need to get started with Fluvio is to install the Fluvio CLI, and link it to a database.
 
-Currently there are two options for managing the database:
-- Using the InfinyOn Cloud
-- Installing Kubernetes locally on your computer
+Currently there are two options for the database:
+- Using the [InfinyOn Cloud](https://www.infinyon.com/cloud/), the easiest option.
+- Installing Kubernetes locally on your computer.
 
-## Install Fluvio CLI
+## Install The Fluvio CLI
 
 The Fluvio CLI (_command-line interface_) is an all-in-one tool for setting up, interacting with, and managing Fluvio clusters.
 
@@ -19,36 +18,41 @@ Install the Fluvio CLI by running the following command:
 
 %copy first-line%
 ```bash
-curl -fsS https://packages.fluvio.io/v1/install.sh | bash
+$ curl -fsS https://packages.fluvio.io/v1/install.sh | bash
 ```
 
 ### Environment Variables and Fluvio
 
-Fluvio installs to `~/.fluvio/bin/`. This is not in the PATH [environment variable], and as such will not be found as a program to execute by default. Please add it with one of these three commands.
+Fluvio installs to `~/.fluvio/bin/`. This is not in the [PATH environment variable](https://www.ibm.com/docs/en/aix/7.2?topic=accounts-path-environment-variable), and as such will not be found as a program to execute by default. Please add it with one of these three commands.
 
-%copy first-line%
-```bash
-$ export PATH=${HOME}/.fluvio/bin:${PATH} >> ~/.bashrc
-```
+**Zsh**
 
 %copy first-line%
 ```zsh
-$ export PATH=${HOME}/.fluvio/bin:${PATH} >> ~/.zshrc
+$ export $PATH=$HOME/.fluvio/bin:${PATH} >> ~/.zshrc
 ```
+
+**Bash**
+
+%copy first-line%
+```bash
+$ export $PATH=$HOME/.fluvio/bin:${PATH} >> ~/.bashrc
+```
+
+**Fish**
 
 %copy first-line%
 ```fish
 $ fish_add_path $HOME/.fluvio/bin
 ```
-[environment variable]:(https://www.ibm.com/docs/en/aix/7.2?topic=accounts-path-environment-variable) 
 ## Connect to InfinyOn Cloud
 
-This is the easiest way of getting started with Fluvio.
-For the small price of creating an account, you too can avoid setting up a Kubernetes cluster!
+This is the easiest way to get started with Fluvio.
+(You too can avoid setting up a Kubernetes cluster!)
 
-Follow the instructions found below to be on your way.
+Follow the instructions in the link to set up an InfiniOn cloud account and connect it to Fluvio.
 
-[Cloud with InfiniOn]
+**[Cloud with InfiniOn]**
 
 ## Install Dependencies Locally
 
@@ -56,7 +60,7 @@ If you decide to run a Fluvio cluster locally, you must set up a Kubernetes clus
 Please follow these guides for setting it up on your OS of choice:
 
 ### docker
-Docker can be a quiet dependency of several Kubernetes systems, you can test if it is installed with:
+Docker can be a quiet dependency of several Kubernetes systems. You can test if it is installed with:
 
 %copy first-line%
 ```bash
@@ -69,17 +73,19 @@ If you need to install docker, follow the instructions found on the [docker inst
 
 [Kubernetes on Linux]
 
-~> You can install the Fluvio CLI on a Raspberry Pi, but at the current moment local clusters are not supported.
-
 ### Mac OS
 
 [Kubernetes on MacOS (Intel)]
 
 [Kubernetes on MacOS (M1)]
 
+### Raspberry Pi
+
+~> Local Fluvio clusters are not currently supported on the Raspberry Pi. Please follow the instructions for using [InfiniOn Cloud]({{< ref "/docs/get-started/cloud.md" >}}) instead.
+
 ### Windows
 
-~> At the current moment Windows is not supported.
+~> Windows is not currently supported.
 
 _[Should we test out running k8s and fluvio in wsl?
 I guess best suggestion would be to install fluvio CLI and use the cloud]_
@@ -92,5 +98,5 @@ I guess best suggestion would be to install fluvio CLI and use the cloud]_
 
 ## Getting help
 
-If you need help, you can reach us on [Discord](https://discordapp.com/invite/bBG2dTz),
-or in [Github](https://github.com/infinyon/fluvio/issues)
+If you need help, please reach out to us on [Discord](https://discordapp.com/invite/bBG2dTz),
+or post an issue on [Github](https://github.com/infinyon/fluvio/issues)
