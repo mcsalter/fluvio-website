@@ -29,14 +29,14 @@ Fluvio installs to `~/.fluvio/bin/`. This is not in the [PATH environment variab
 
 %copy first-line%
 ```zsh
-$ export $PATH=$HOME/.fluvio/bin:${PATH} >> ~/.zshrc
+$ export $PATH="$HOME/.fluvio/bin:${PATH}" >> ~/.zshrc
 ```
 
 **Bash**
 
 %copy first-line%
 ```bash
-$ export $PATH=$HOME/.fluvio/bin:${PATH} >> ~/.bashrc
+$ export $PATH="$HOME/.fluvio/bin:${PATH}" >> ~/.bashrc
 ```
 
 **Fish**
