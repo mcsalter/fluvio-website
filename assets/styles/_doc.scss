@@ -130,4 +130,31 @@
     margin-top: -10px;
     margin-bottom: 20px;
   }
+
+
+  .lang-nav {
+    ul.nav { 
+      border-bottom: 1px solid $gray2; 
+      li { 
+        margin-bottom: -3px; 
+
+        .active {
+          border-bottom: 5px solid $main-color;
+        }
+
+        a {
+          font-size: 1.3em;
+          color: $black;
+        }
+
+        a:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .tab-content {
+      margin: 20px;
+    }
+  }
 }

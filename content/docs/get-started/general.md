@@ -10,7 +10,7 @@ Currently there are two options for the database:
 - Using the [InfinyOn Cloud](https://www.infinyon.com/cloud/), the easiest (and recommended) option.
 - Installing Kubernetes locally on your computer.
 
-## Install Fluvio CLI
+## Install The Fluvio CLI
 
 The Fluvio <abbr title="command-line interface">CLI</abbr> is an all-in-one tool for setting up, interacting with, and managing Fluvio clusters.
 
@@ -47,10 +47,7 @@ $ fish_add_path $HOME/.fluvio/bin
 
 ## Setting up Fluvio
 
-<strong>
-{{< h-list tabTotal="5" tabID="1" tabName1="Cloud" tabName2="Linux" tabName3="MacOS (Intel)" tabName4="MacOS (M1)" tabName5="⚠ Windows ⚠">}}
-</strong>
-<hr>
+{{< h-list tabTotal="5" tabID="1" tabName1="Cloud" tabName2="Linux" tabName3="MacOS (Intel)" tabName4="MacOS (M1)" tabName5="Windows ⚠">}}
 
 {{< h-item tabNum="1">}}
 
@@ -105,7 +102,6 @@ $ fluvio profile list
 ```
 
 -> Use `fluvio profile switch` command to switch between clusters.
-
 
 {{< /h-item>}}
 
@@ -214,6 +210,7 @@ $ kind create cluster --config k8-util/cluster/config.yaml
 
 IF you are determined to run this on Windows, we would suggest installing the Fluvio CLI in [WSL](https://docs.microsoft.com/en-us/windows/wsl/install) 
 (as bash scripts will not run in Windows) and use the InfinOn Cloud.
+
 
 {{< /h-item>}}
 {{< /h-list>}}
