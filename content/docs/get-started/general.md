@@ -7,12 +7,12 @@ weight: 1
 All you need to get started with Fluvio is to install the Fluvio CLI, and link it to a database.
 
 Currently there are two options for the database:
-- Using the [InfinyOn Cloud](https://www.infinyon.com/cloud/), the easiest option.
+- Using the [InfinyOn Cloud](https://www.infinyon.com/cloud/), the easiest (and recommended) option.
 - Installing Kubernetes locally on your computer.
 
 ## Install The Fluvio CLI
 
-The Fluvio CLI (_command-line interface_) is an all-in-one tool for setting up, interacting with, and managing Fluvio clusters.
+The Fluvio <abbr title="command-line interface">CLI</abbr> is an all-in-one tool for setting up, interacting with, and managing Fluvio clusters.
 
 Install the Fluvio CLI by running the following command:
 
