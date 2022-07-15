@@ -18,6 +18,13 @@ on:
   workflow_dispatch:
 
 jobs:
+  changelogs:
+    name: Compile Changelogs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: compile changelogs
+        run: ./changelog.py
   examples:
     name: Build site
     runs-on: ubuntu-latest
@@ -36,11 +43,3 @@ jobs:
           name: hugo build
           path: public
           retention-days: 7
-
-  changelogs:
-    name: Compile Changelogs
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: compile changelogs
-        run: ./.github/workflow/changelog.py
