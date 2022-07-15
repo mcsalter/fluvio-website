@@ -8,11 +8,12 @@ concurrency:
   cancel-in-progress: true
 
 on:
-  push
+  push:
+  
   pull_request:
     branches: [master]
   workflow_dispatch:
-
+jobs:
   changelogs:
     name: Compile Changelogs
     runs-on: ubuntu-latest
