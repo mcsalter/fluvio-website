@@ -1,0 +1,4 @@
+{{ $file := .Get "file" }}
+{{- $content := "" -}}
+{{- $content = (println $content (os.ReadFile $file)) -}}
+{{ $content | markdownify }}

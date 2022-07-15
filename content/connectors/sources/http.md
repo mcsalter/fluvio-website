@@ -229,11 +229,5 @@ Importantly, when using a Local Connector, you _must_ include the first two argu
 [Fluvio CLI]: /download
 [free InfinyOn Cloud account]: https://infinyon.cloud/signup
 
-## Changelog
 
-| Version | Date       | PR                                                               | Subject                                           |
-|:-------:|:----------:|:----------------------------------------------------------------:| ------------------------------------------------- |
-| 0.3.0   | 2022-02-01 | [278](https://github.com/infinyon/fluvio-connectors/pull/278)    | <ul><li>Add interval times in human readable times</li><li>Support for producer and consumer top level config options</li><ul> |
-| 0.2.0   | 2022-02-01 | [141](https://github.com/infinyon/fluvio-connectors/pull/141)    | <ul><li>Feature json Response Type Record</li><li>Deprecate metadata output_format in favor of `output_parts` [ body (default)</li><li>Add Metadata `output_type` [ text (default) | json ] | full ]</li><ul> |
-| 0.1.1   | 2022-01-31 | [127](https://github.com/infinyon/fluvio-connectors/pull/127)    | <ul><li>Feature full Response Parts Record</li><li>Add Metadata `output_format` [ body (default) | full ]</li><ul> |
-| 0.1.0   | 2021-11-09 | -   | <ul><li>Initial version with text/body Response (default) Record</li></ul> |
+{{<changelog file="changelogs/compiled/connectors/rust-connectors/sources/http/CHANGELOG.md">}}
