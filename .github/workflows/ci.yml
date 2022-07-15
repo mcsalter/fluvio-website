@@ -43,4 +43,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: compile changelogs
-        run ./.github/workflow/changelog.py
+        run: ./.github/workflow/changelog.py
