@@ -1,0 +1,22 @@
+name: CI
+
+permissions:
+  contents: read, write
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  push
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+  changelogs:
+    name: Compile Changelogs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: compile changelogs
+        run: ./scripts/changelog.py

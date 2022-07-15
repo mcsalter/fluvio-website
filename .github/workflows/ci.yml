@@ -18,13 +18,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  changelogs:
-    name: Compile Changelogs
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: compile changelogs
-        run: ./scripts/changelog.py
   examples:
     name: Build site
     runs-on: ubuntu-latest
