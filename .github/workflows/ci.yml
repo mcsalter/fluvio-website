@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: compile changelogs
-        run: ./changelog.py
+        run: ./scripts/changelog.py
   examples:
     name: Build site
     runs-on: ubuntu-latest
