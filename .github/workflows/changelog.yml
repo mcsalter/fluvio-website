@@ -15,7 +15,7 @@ jobs:
     - name: pull fluvio-connectors
       run: |
         cd ..
-        git clone https://github.com/infinion/fluvio-connectors/
+        git clone https://github.com/infinion/fluvio-connectors.git
         cd fluvio-connectors
         find . ! -name CHANGELOG.md -type f -delete
         cd ..
