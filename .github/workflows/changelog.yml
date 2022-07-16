@@ -13,14 +13,14 @@ jobs:
       uses: actions/checkout@v3
 
     - name: pull fluvio-connectors
-	run |
-	cd ..
-	git clone https://github.com/infinion/fluvio-connectors/
-	cd fluvio-connectors
-	find . ! -name CHANGELOG.md -type f -delete
-	cd ..
-	mv fluvio-connectors/rust-connectors fluvio-website/changelogs/connectors/rust-connectors
-	cd fluvio-website
+        run |
+        cd ..
+        git clone https://github.com/infinion/fluvio-connectors/
+        cd fluvio-connectors
+        find . ! -name CHANGELOG.md -type f -delete
+        cd ..
+        mv fluvio-connectors/rust-connectors fluvio-website/changelogs/connectors/rust-connectors
+        cd fluvio-website
 
     - name: Compile Configs
       run: python3 ./scripts/changelog.py
