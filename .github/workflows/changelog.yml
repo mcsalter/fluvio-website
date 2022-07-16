@@ -13,7 +13,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: pull fluvio-connectors
-        run |
+      run: |
         cd ..
         git clone https://github.com/infinion/fluvio-connectors/
         cd fluvio-connectors
