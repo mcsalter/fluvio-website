@@ -27,7 +27,7 @@ jobs:
         find . ! -name CHANGELOG.md -type f -delete
         find . -type d -empty -delete
         cd ..
-        cp -r fluvio-connectors/rust-connectors fluvio-website/changelogs/connectors/rust-connectors
+        cp -r fluvio-connectors/rust-connectors fluvio-website/changelogs/base/connectors/rust-connectors
         cd fluvio-website
 
     - name: Compile Configs
