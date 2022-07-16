@@ -23,7 +23,7 @@ jobs:
         find . ! -name CHANGELOG.md -type f -delete
         find . -type d -empty -delete
         cd ..
-        cp -r fluvio-connectors/rust-connectors ./changelogs/base/connectors/
+        mkdir -p ./changelogs/base/connectors/ cp -r fluvio-connectors/rust-connectors "$_"
 
     - name: Compile Configs
       run: python3 ./scripts/changelog.py
