@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-      with:
-        path: './fluvio-website'
     - name: checkout connectors
       uses: actions/checkout@v3
       with:
@@ -21,17 +19,14 @@ jobs:
         
     - name: move old data out and replace
       run: |
-        cd fluvio-connectors
-        pwd
+        cd fluvio-connector
         find . ! -name CHANGELOG.md -type f -delete
         find . -type d -empty -delete
         cd ..
-        cp -r fluvio-connectors/rust-connectors fluvio-website/changelogs/base/connectors/rust-connectors
-        cd fluvio-website
+        cp -r fluvio-connectors/rust-connectors ./changelogs/base/connectors/rust-connectors
 
     - name: Compile Configs
       run: python3 ./scripts/changelog.py
-
 
     - name: commit & push update
       uses: github-actions-x/commit@v2.9
