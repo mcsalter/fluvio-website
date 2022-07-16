@@ -1,17 +1,37 @@
 name: Changelog compilation
 
-on:
-  push:
-  
+on:  
   pull_request:
     branches: [master]
   workflow_dispatch:
+
+
   
 jobs:
   changelogs:
-    name: Compile Changelogs
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: compile changelogs
-        run: python3 ./scripts/changelog.py
+    - name: Checkout data
+      uses: actions/checkout@v3
+      
+    - name: Compile Configs 
+      run: python3 ./scripts/changelog.py
+
+
+    - name: commit & push update
+      uses: github-actions-x/commit@v2.9
+      with:
+        # Github Token with commit access
+        github-token: ${{ secrets.GITHUB_TOKEN}}
+        # Specify commit message
+        commit-message: Commiting modification to Changelogs!
+        # Force add files, useful for adding ignored files.
+        force-add: true
+        # Force push.
+        force-push: false # optional, default is false
+        # Pull and rebase before commiting. Useful when using commit inside matrix.
+        rebase: false # optional, default is false
+        # Specific files to add.
+        files: ./changelogs/compiled/*
+        # Committer name. Default is name of the person or app that initiated the workflow.
+        name: changelog Bot
