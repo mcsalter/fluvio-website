@@ -12,14 +12,21 @@ jobs:
     - name: Checkout data
       uses: actions/checkout@v3
 
-    - name: pull fluvio-connectors
+    - name: move up a dir
+      run: cd ..
+      
+    - name: pulling fluvio-connectors
+      uses: actions/checkout@v3
+      with:
+        repository: infinion/fluvio-connectors  
+        
+    - name: move old data out and replace
       run: |
-        cd ..
-        git clone https://github.com/infinion/fluvio-connectors.git
         cd fluvio-connectors
         find . ! -name CHANGELOG.md -type f -delete
+        find . -type d -empty -delete
         cd ..
-        mv fluvio-connectors/rust-connectors fluvio-website/changelogs/connectors/rust-connectors
+        cp -r fluvio-connectors/rust-connectors fluvio-website/changelogs/connectors/rust-connectors
         cd fluvio-website
 
     - name: Compile Configs
