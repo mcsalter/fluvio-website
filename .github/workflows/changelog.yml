@@ -9,20 +9,19 @@ jobs:
   changelogs:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout website
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v3
       with:
-        path: fluvio-website
-      
-    - name: pulling fluvio-connectors
+        path: './fluvio-website'
+    - name: checkout connectors
       uses: actions/checkout@v3
       with:
         repository: infinyon/fluvio-connectors
         ref: main
-        path: fluvio-connectors
+        path: './fluvio-connectors'
         
     - name: move old data out and replace
       run: |
+        cd fluvio-connectors
         pwd
         find . ! -name CHANGELOG.md -type f -delete
         find . -type d -empty -delete
