@@ -9,13 +9,10 @@ jobs:
   changelogs:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout data
+    - name: Checkout website
       uses: actions/checkout@v3
       with:
         path: fluvio-website
-
-    - name: move up a dir
-      run: cd ..
       
     - name: pulling fluvio-connectors
       uses: actions/checkout@v3
