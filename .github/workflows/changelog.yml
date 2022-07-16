@@ -18,7 +18,8 @@ jobs:
     - name: pulling fluvio-connectors
       uses: actions/checkout@v3
       with:
-        repository: infinion/fluvio-connectors  
+        repository: infinyon/fluvio-connectors/
+        ref: main
         
     - name: move old data out and replace
       run: |
