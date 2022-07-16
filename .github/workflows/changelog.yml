@@ -11,6 +11,8 @@ jobs:
     steps:
     - name: Checkout data
       uses: actions/checkout@v3
+      with:
+        path: fluvio-website
 
     - name: move up a dir
       run: cd ..
@@ -20,6 +22,7 @@ jobs:
       with:
         repository: infinyon/fluvio-connectors
         ref: main
+        path: fluvio-connectors
         
     - name: move old data out and replace
       run: |
