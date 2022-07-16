@@ -4,7 +4,13 @@ on:
   pull_request:
     branches: [master]
   workflow_dispatch:
-  
+    inputs:
+      reason:
+        description: 'test changelog compile'     
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'  
 jobs:
   changelogs:
     runs-on: ubuntu-latest
