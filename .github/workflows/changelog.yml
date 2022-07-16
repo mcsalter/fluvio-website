@@ -19,7 +19,7 @@ jobs:
         
     - name: move old data out and replace
       run: |
-        cd fluvio-connector
+        cd fluvio-connectors
         find . ! -name CHANGELOG.md -type f -delete
         find . -type d -empty -delete
         cd ..
