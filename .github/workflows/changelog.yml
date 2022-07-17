@@ -1,6 +1,11 @@
 name: Changelog compilation
 
 on:
+  push:
+    branches:
+      - staging
+      - trying
+      - changelog-automation
   pull_request:
     branches: [master]
   workflow_dispatch:
