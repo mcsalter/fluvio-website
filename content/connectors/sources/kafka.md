@@ -36,3 +36,5 @@ $ fluvio connector create --config=./kafka-source-connector.yml
 ## Data Events
 
 Events are sent to fluvio as raw bytes. The record are sent along to fluvio as well.
+
+{{<changelog file="connectors/rust-connectors/sources/kafka/">}}

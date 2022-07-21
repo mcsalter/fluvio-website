@@ -1,5 +1,7 @@
 import os
 
+LENGTH_OF_START_PATH = len("./changelogs/base/")
+
 def get_files():
     startPath = "./changelogs/base/"
 
@@ -11,8 +13,8 @@ def get_files():
         for fileName in files:
             if fileName != []:
                 #checks that newFile dir exists, if not create it:
-                if not os.path.exists(os.path.join("./changelogs/compiled/", root[len(startPath):])):
-                    os.makedirs(os.path.join("./changelogs/compiled/", root[len(startPath):]))
+                if not os.path.exists(os.path.join("./changelogs/compiled/", root[LENGTH_OF_START_PATH:])):
+                    os.makedirs(os.path.join("./changelogs/compiled/", root[LENGTH_OF_START_PATH:]))
                 endFile = os.path.join(root, fileName)
                 fileArr.append(endFile)
 
@@ -65,7 +67,7 @@ def main():
 
     # iterates through all the files and generates a table from it
     for files in fileList:
-        newFile = os.path.join(endpath, files[18:])
+        newFile = os.path.join(endpath, files[LENGTH_OF_START_PATH:])
         generate_table(files, newFile)
 
 

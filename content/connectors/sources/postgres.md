@@ -906,3 +906,5 @@ more details on how to use the Postgres Connector and what to expect from the da
 [read the documentation on them here]: https://www.postgresql.org/docs/10/logical-replication-publication.html
 [Data Events section]: #data-events
 [Configuration Options section]: #configuration-options
+
+{{<changelog file="connectors/rust-connectors/sources/postgres/">}}

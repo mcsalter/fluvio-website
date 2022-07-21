@@ -63,3 +63,5 @@ $ fluvio connector create --config=./dynamodb-connector.yml
 
 Input events are assumed to be JSON. If the data is not JSON deserializable,
 the record is ignored.
+
+{{<changelog file="connectors/rust-connectors/sinks/dynamodb/">}}

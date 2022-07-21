@@ -41,3 +41,5 @@ Data is transformed to a string in a [UTF-8 lossy conversion] as is. If you'd li
 
 
 [UTF-8 lossy conversion]: https://doc.rust-lang.org/std/string/struct.String.html#method.from_utf8_lossy
+
+{{<changelog file="connectors/rust-connectors/sinks/slack/">}}

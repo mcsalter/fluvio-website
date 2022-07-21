@@ -1,4 +1,17 @@
-{{ $file := .Get "file" }}
+{{/* Generating the paths for both the empty 'default' changelog and the actual changelog.
+Please use the format of [changelog/compiled/] path/to/changelog/file [CHANGELOG.md].
+Content in brackets are automatically filled in */}}
+{{ $default := path.Join "changelogs" "compiled" "default-changelog.md" }}
+{{ $path := .Get "file" }}
+{{ $root := "/changelogs/compiled" }}
+{{ $filename := "CHANGELOG.md" }}
+{{ $FILE := path.Join $root $path $filename }}
+{{/* Determines which file to use. This is to prevent a crash if the specified changelog does not exist */}}
 {{- $content := "" -}}
-{{- $content = (println $content (os.ReadFile $file)) -}}
+{{ if os.FileExists $FILE }}
+  {{- $content = (println $content (os.ReadFile $FILE)) -}}
+{{ else }}
+{{- $content = (println $content (os.ReadFile $default)) -}}
+{{ end }}
+{{/* Prints the changelog to the page */}}
 {{ $content | markdownify }}

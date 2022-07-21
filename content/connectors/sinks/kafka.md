@@ -43,3 +43,5 @@ $ fluvio connector create --config=./kafka-sink-connector.yml
 ## Data Events
 
 Events are sent to fluvio as raw bytes. The record are sent along to fluvio as well.
+
+{{<changelog file="connectors/rust-connectors/sinks/kafka/">}}

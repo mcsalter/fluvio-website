@@ -230,4 +230,4 @@ Importantly, when using a Local Connector, you _must_ include the first two argu
 [free InfinyOn Cloud account]: https://infinyon.cloud/signup
 
 
-{{<changelog file="changelogs/compiled/connectors/rust-connectors/sources/http/CHANGELOG.md">}}
+{{<changelog file="connectors/rust-connectors/sources/http/">}}

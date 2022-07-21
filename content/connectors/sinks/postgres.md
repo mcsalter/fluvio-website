@@ -61,3 +61,5 @@ Should the connector for some reason stop or crash, when starting up again, the
 connector will start the fluvio consumer stream at the `current_offset` found
 in `fluvio.offset` table in the postges server. This will prevent any duplicate
 inserts or deletes.
+
+{{<changelog file="connectors/rust-connectors/sinks/postgres/">}}
