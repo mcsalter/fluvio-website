@@ -1,6 +1,13 @@
+This is now archived
 # Fluvio Website
 
 Fluvio website repository stores all documentation published in [fluvio.io](https://fluvio.io).
+
+
+**Personal repository for testing**
+
+All technical writing content is stored in `content/docs/tutorials`
+
 
 ## Run Website on Local Machine
 
@@ -19,11 +26,3 @@ The website is generated using [Hugo Framework](https://gohugo.io/). To run the 
 4. Checkout [WRITERS.md](./WRITERS.md) for formatting and Fluvio customizations.
 
 Hugo watches for file changes and automatically updates website.
-
-
-## Public/Nightly Websites
-
-[Netlify](https://www.netlify.com/) watches the following branches and automatically updates websites:
-
-* `stable` updates [fluvio.io](https://fluvio.io)
-* `master` updates [nightly.fluvio.io](https://nightly.fluvio.io)
